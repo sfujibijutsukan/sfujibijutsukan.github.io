@@ -5,6 +5,9 @@ draft: false
 tags: ["github","astro"]
 ---
 
+
+## 本編
+
 Github Pagesを使えば、無料で自分のWebサイトを全世界に公開することができます！
 ドメインを取得すれば(有料)、独自ドメインでの公開も可能です。
 
@@ -26,3 +29,21 @@ Github Pagesを使えば、無料で自分のWebサイトを全世界に公開�
 
 最近文章力がなくなってきているのをひしひしと感じるので、
 日記や技術メモを書くのに、今後も使っていきたいと思います！
+
+
+## Webサイトにアップロードする画像のメタデータを自動で削除する
+Webサイトに位置情報などのメタデータが含まれた画像をアップロードすると、プライバシーの観点から問題がある場合があります。
+
+Gitのpre-commitフックを活用することで、commit時に指定したスクリプトを実行できます。
+これを利用して、Commit時に画像のメタデータを削除するスクリプトを実行するようにしました。
+
+- .githook/pre-commitにメタデータ削除スクリプトを記述
+- pre-commitフックに、.githook/pre-commitを実行するように設定
+    - 多分元々は.git/hooks/pre-commitにスクリプトを置くのが普通なんですが、Gitで管理したかったので、.githook/pre-commitにスクリプトを置いて、core.hooksPathで.githookを指定するようにしました。
+    ```
+    $ git config core.hooksPath .githooks
+    $ git config --get core.hooksPath
+    .githooks # こう出力されればOK
+    ```
+
+これで、Webサイトにアップロードする際に画像のメタデータを消し忘れることはありません！
