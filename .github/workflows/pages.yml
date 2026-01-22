@@ -20,27 +20,6 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
-      - name: Install exiftool
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libimage-exiftool-perl
-      - name: Strip image metadata
-        run: |
-          if [ -d "public/images" ]; then
-            exiftool -all= -overwrite_original -r public/images
-          else
-            echo "public/images not found; skipping metadata removal."
-          fi
-      - name: Verify image metadata removed
-        run: |
-          if [ -d "public/images" ]; then
-            META=$(exiftool -r -q -q -s -XMP:all -EXIF:all -IPTC:all -PNG:Text public/images || true)
-            if [ -n "$META" ]; then
-              echo "Metadata still present in images:"
-              exiftool -r -XMP:all -EXIF:all -IPTC:all -PNG:Text public/images
-              exit 1
-            fi
-          fi
       - name: Install, build, and upload your site
         uses: withastro/action@v3
         with:
