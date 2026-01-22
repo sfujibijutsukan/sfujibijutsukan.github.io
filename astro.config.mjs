@@ -9,7 +9,8 @@ import { SITE } from "./src/config/site.mjs";
 
 // https://astro.build/config
 export default defineConfig({
-  site: SITE.url,
+  site: "https://sfuji.org",
+  base: "/",
   integrations: [
     react(),
     icon(),
