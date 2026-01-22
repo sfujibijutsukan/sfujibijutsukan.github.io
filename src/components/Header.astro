@@ -33,13 +33,15 @@ import { Icon } from "astro-icon/components";
     <!-- Desktop navigation -->
     <ul class="hidden md:flex items-center gap-6" role="list">
       <li>
-        <a
-          href="/apps"
-          class="text-gray-600 hover:text-gray-900 transition-colors"
-          aria-current={Astro.url.pathname === '/apps' ? 'page' : undefined}
-        >
-          Apps
-        </a>
+        <div class="flex flex-col items-start gap-1">
+          <a
+            href="/apps"
+            class="text-gray-600 hover:text-gray-900 transition-colors"
+            aria-current={Astro.url.pathname === '/apps' ? 'page' : undefined}
+          >
+            Apps
+          </a>
+        </div>
       </li>
       <li>
         <a
@@ -78,6 +80,16 @@ import { Icon } from "astro-icon/components";
           aria-current={Astro.url.pathname === '/apps' ? 'page' : undefined}
         >
           Apps
+        </a>
+      </li>
+      <li>
+        <a
+          href="/blog"
+          class="block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors"
+          role="menuitem"
+          aria-current={Astro.url.pathname === '/blog' ? 'page' : undefined}
+        >
+          Blog
         </a>
       </li>
       <li>

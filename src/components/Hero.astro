@@ -17,20 +17,25 @@ import { Icon } from "astro-icon/components";
   <ScrollReveal client:load delay={0.4}>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
       <a
-        href="https://github.com/jonnysmillie/astro-base"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 px-8 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors font-medium"
-        aria-label="Download Astro Base from GitHub (opens in new tab)"
+        href="/apps"
+        class="inline-flex items-center gap-2 px-8 py-3 bg-white text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-medium"
       >
-        <Icon name="tabler:download" class="w-5 h-5" aria-hidden="true" />
-        <span>Download</span>
+        <Icon name="tabler:apps" class="w-5 h-5" aria-hidden="true" />
+        <span>App</span>
       </a>
       <a
         href="/blog"
-        class="inline-block px-8 py-3 bg-white text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+        class="inline-flex items-center gap-2 px-8 py-3 bg-white text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-medium"
       >
-        Blog
+        <Icon name="tabler:book" class="w-5 h-5" aria-hidden="true" />
+        <span>Blog</span>
+      </a>
+      <a
+        href="/contact"
+        class="inline-flex items-center gap-2 px-8 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors font-medium"
+      >
+        <Icon name="tabler:mail" class="w-5 h-5" aria-hidden="true" />
+        <span>Contact</span>
       </a>
     </div>
   </ScrollReveal>
