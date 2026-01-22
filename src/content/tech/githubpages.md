@@ -11,18 +11,18 @@ Github Pagesを使えば、無料で自分のWebサイトを全世界に公開�
 やったこと
 1. Cloudflareで独自ドメインを取得(やらなくても良いしやっても良い)
     - Cloudflareでドメインを買うと、DNSの管理もCloudflareでできるので良い
-2. Github Pages
+2. Github Pagesを使ってサイトを公開
     - sfujibijutsukan.github.io リポジトリを作成
     - リポジトリのSettings > Pages で公開設定
         - sfujibijutsukan.github.ioにアクセスすればサイトを表示できるようになる
-3. Astroという静的サイトジェネレータでサイトを作成
+3. Astroという静的サイトジェネレータでサイトの中身を作成
     - HugoとかJekyllとか他にも色々あるジェネレータを使うのが楽
         - markdownで文章かけるし、テンプレートをベースにサイトをいじれます
         - いい感じのテンプレートがあったのでAstroを選びました
     - Astro baseテンプレートのgithubリポジトリをsfujibijutsukan.github.ioにクローンしてゴニョゴニョ
 4. Github Actionsでビルドとデプロイの自動化
-    - .github/workflows/deploy.yml にビルドとデプロイの設定を記述
-    - pushするたびに自動でビルドとデプロイが走るようになる
+    - .github/workflows/pages.yml にビルドとデプロイの設定を記述
+    - ローカルで編集したものが、pushするたびに自動でビルドとデプロイが走るようになる
 
 最近文章力がなくなってきているのをひしひしと感じるので、
 日記や技術メモを書くのに、今後も使っていきたいと思います！
