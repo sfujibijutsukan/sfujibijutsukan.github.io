@@ -34,10 +34,10 @@ jobs:
       - name: Verify image metadata removed
         run: |
           if [ -d "public/images" ]; then
-            META=$(exiftool -r -XMP:all -EXIF:all -IPTC:all -PNG:Text public/images || true)
+            META=$(exiftool -r -q -q -s -XMP:all -EXIF:all -IPTC:all -PNG:Text public/images || true)
             if [ -n "$META" ]; then
               echo "Metadata still present in images:"
-              echo "$META"
+              exiftool -r -XMP:all -EXIF:all -IPTC:all -PNG:Text public/images
               exit 1
             fi
           fi
