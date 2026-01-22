@@ -3,26 +3,28 @@ import ScrollReveal from "./ScrollReveal.tsx";
 import { Icon } from "astro-icon/components";
 ---
 
-<section id="features" class="max-w-6xl mx-auto px-4 py-20">
+<section id="Apps" class="max-w-6xl mx-auto px-4 py-20">
   <ScrollReveal client:idle delay={0.1}>
-    <h2 class="text-4xl font-bold text-gray-900 text-center mb-12">Features</h2>
+    <h2 class="text-4xl font-bold text-gray-900 text-center mb-12">Apps</h2>
   </ScrollReveal>
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
     <ScrollReveal client:idle delay={0.2} scale={true}>
-      <div
-        class="p-6 bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-shadow"
+      <a
+        href="https://github.com/sfujibijutsukan/shishutsukan"
+        class="block p-6 bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-shadow"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <div
           class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
         >
-          <Icon name="tabler:brand-react" class="w-6 h-6 text-gray-900" aria-hidden="true" />
+          <Icon name="tabler:brand-github" class="w-6 h-6 text-gray-900" aria-hidden="true" />
         </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">React</h3>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">shishutsukan</h3>
         <p class="text-gray-600">
-          Component-based UI library for building interactive interfaces.
-          Seamlessly integrated with Astro for dynamic components.
+          支出館
         </p>
-      </div>
+      </a>
     </ScrollReveal>
     <ScrollReveal client:idle delay={0.3} scale={true}>
       <div
@@ -31,17 +33,10 @@ import { Icon } from "astro-icon/components";
         <div
           class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
         >
-          <Icon
-            name="tabler:brand-framer-motion"
-            class="w-6 h-6 text-gray-900"
-            aria-hidden="true"
-          />
+          <Icon name="tabler:clock" class="w-6 h-6 text-gray-900" aria-hidden="true" />
         </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Framer Motion</h3>
-        <p class="text-gray-600">
-          Production-ready motion library for React. Create smooth animations
-          and delightful user experiences with spring physics.
-        </p>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Comming soon..</h3>
+        <p class="text-gray-600">Comming soon..</p>
       </div>
     </ScrollReveal>
     <ScrollReveal client:idle delay={0.4} scale={true}>
@@ -51,13 +46,10 @@ import { Icon } from "astro-icon/components";
         <div
           class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
         >
-          <Icon name="tabler:brand-tailwind" class="w-6 h-6 text-gray-900" aria-hidden="true" />
+          <Icon name="tabler:clock" class="w-6 h-6 text-gray-900" aria-hidden="true" />
         </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Tailwind CSS</h3>
-        <p class="text-gray-600">
-          Utility-first CSS framework for rapid UI development. Build beautiful,
-          responsive designs with ease and no custom CSS needed.
-        </p>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Comming soon..</h3>
+        <p class="text-gray-600">Comming soon..</p>
       </div>
     </ScrollReveal>
     <ScrollReveal client:idle delay={0.5} scale={true}>
@@ -67,14 +59,10 @@ import { Icon } from "astro-icon/components";
         <div
           class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
         >
-          <Icon name="tabler:icons" class="w-6 h-6 text-gray-900" aria-hidden="true" />
+          <Icon name="tabler:clock" class="w-6 h-6 text-gray-900" aria-hidden="true" />
         </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Astro Icons</h3>
-        <p class="text-gray-600">
-          Beautiful icon component library for Astro. Access thousands of icons
-          from popular icon sets with zero runtime overhead and easy
-          integration.
-        </p>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Comming soon..</h3>
+        <p class="text-gray-600">Comming soon..</p>
       </div>
     </ScrollReveal>
     <ScrollReveal client:idle delay={0.6} scale={true}>
@@ -84,31 +72,24 @@ import { Icon } from "astro-icon/components";
         <div
           class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
         >
-          <Icon name="tabler:brand-sass" class="w-6 h-6 text-gray-900" aria-hidden="true" />
+          <Icon name="tabler:clock" class="w-6 h-6 text-gray-900" aria-hidden="true" />
         </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">Sass</h3>
-        <p class="text-gray-600">
-          CSS preprocessor with variables, mixins, and nesting. Use Sass
-          alongside Tailwind for advanced styling needs and complex layouts.
-        </p>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Comming soon..</h3>
+        <p class="text-gray-600">Comming soon..</p>
       </div>
     </ScrollReveal>
     <ScrollReveal client:idle delay={0.7} scale={true}>
-      <a
-        href="/example"
-        class="block p-6 bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-shadow"
+      <div
+        class="p-6 bg-white rounded-lg border border-gray-200 hover:shadow-lg transition-shadow"
       >
         <div
           class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4"
         >
-          <Icon name="tabler:markdown" class="w-6 h-6 text-gray-900" aria-hidden="true" />
+          <Icon name="tabler:clock" class="w-6 h-6 text-gray-900" aria-hidden="true" />
         </div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-2">MDX</h3>
-        <p class="text-gray-600">
-          Write JSX in your Markdown documents. Perfect for blog posts,
-          documentation, and content-rich pages with component support.
-        </p>
-      </a>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Comming soon..</h3>
+        <p class="text-gray-600">Comming soon..</p>
+      </div>
     </ScrollReveal>
   </div>
 </section>

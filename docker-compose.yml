@@ -1,11 +1,12 @@
-version: '3.8'
 services:
   astro:
     build: .
     image: astro-builder:latest
     ports:
-      - "3000:3000"
+      - "3003:3000"
     environment:
       - PORT=3000
-    # No volumes by default: keeps the host filesystem clean
-    command: sh -c "npm run build && npm run preview -- --host 0.0.0.0 --port $PORT"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: sh -c "npm install --no-audit --silent && npm run dev -- --host 0.0.0.0 --port $$PORT"
