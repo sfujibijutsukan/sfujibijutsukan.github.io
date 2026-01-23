@@ -27,12 +27,12 @@ jobs:
 
       - name: Commit and push if changed
         run: |
-          if git status --porcelain | grep -q '^\?\? src/content/diary/'; then
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add src/content/diary/*.md
-            git commit -m "Add daily diary entry"
-            git push
-          else
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/content/diary/*.md
+          if git diff --cached --quiet; then
             echo "No new diary entry to commit."
+            exit 0
           fi
+          git commit -m "Add daily diary entry"
+          git push
