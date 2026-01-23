@@ -1,0 +1,38 @@
+name: Create daily diary entry
+
+on:
+  schedule:
+    # JST 00:00 (UTC 15:00)
+    - cron: "0 15 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  create-diary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create today diary file
+        env:
+          TZ: Asia/Tokyo
+        run: |
+          DATE=$(date +%Y%m%d)
+          bash scripts/new-diary.sh "$DATE"
+
+      - name: Commit and push if changed
+        run: |
+          if git status --porcelain | grep -q '^\?\? src/content/diary/'; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add src/content/diary/*.md
+            git commit -m "Add daily diary entry"
+            git push
+          else
+            echo "No new diary entry to commit."
+          fi
