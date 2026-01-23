@@ -3,6 +3,7 @@ import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 import { getCollection } from "astro:content";
+import Comments from "../../../components/Comments.astro";
 
 export async function getStaticPaths() {
   const entries = await getCollection("diary");
@@ -37,6 +38,8 @@ const { Content } = await entry.render();
       </header>
       <Content />
     </article>
+    <br><br>
+    <Comments />
   </main>
   <Footer />
 </Layout>
