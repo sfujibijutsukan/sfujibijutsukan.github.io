@@ -19,12 +19,15 @@ jobs:
           fetch-depth: 0
 
       - name: Create today diary file
+        id: create-file
         env:
           TZ: Asia/Tokyo
         run: |
           DATE=$(date +%Y%m%d)
           echo "Creating diary entry for date: $DATE"
           bash scripts/new-diary.sh "$DATE"
+          # Export formatted date for commit message
+          echo "date=$DATE" >> $GITHUB_OUTPUT
 
       - name: Commit and push if changed
         run: |
@@ -35,6 +38,10 @@ jobs:
             echo "No new diary entry to commit."
             exit 0
           fi
-          COMMIT_DATE=$(date +%Y-%m-%d)
-          git commit -m "Add daily diary entry for $COMMIT_DATE"
+          # Use the date from previous step
+          DATE="${{ steps.create-file.outputs.date }}"
+          YEAR=${DATE:0:4}
+          MONTH=${DATE:4:2}
+          DAY=${DATE:6:2}
+          git commit -m "Add daily diary entry for ${YEAR}-${MONTH}-${DAY}"
           git push
