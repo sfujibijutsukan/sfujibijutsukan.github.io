@@ -38,10 +38,8 @@ jobs:
             echo "No new diary entry to commit."
             exit 0
           fi
-          # Use the date from previous step
+          # Format date from step output for commit message (YYYYMMDD -> YYYY-MM-DD)
           DATE="${{ steps.create-file.outputs.date }}"
-          YEAR=${DATE:0:4}
-          MONTH=${DATE:4:2}
-          DAY=${DATE:6:2}
-          git commit -m "Add daily diary entry for ${YEAR}-${MONTH}-${DAY}"
+          FORMATTED="${DATE:0:4}-${DATE:4:2}-${DATE:6:2}"
+          git commit -m "Add daily diary entry for $FORMATTED"
           git push
