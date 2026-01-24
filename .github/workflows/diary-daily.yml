@@ -40,6 +40,10 @@ jobs:
           fi
           # Format date from step output for commit message (YYYYMMDD -> YYYY-MM-DD)
           DATE="${{ steps.create-file.outputs.date }}"
+          if [ -z "$DATE" ]; then
+            echo "Error: Failed to retrieve date from previous step"
+            exit 1
+          fi
           FORMATTED="${DATE:0:4}-${DATE:4:2}-${DATE:6:2}"
           git commit -m "Add daily diary entry for $FORMATTED"
           git push
