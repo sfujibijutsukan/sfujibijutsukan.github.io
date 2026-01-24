@@ -23,6 +23,7 @@ jobs:
           TZ: Asia/Tokyo
         run: |
           DATE=$(date +%Y%m%d)
+          echo "Creating diary entry for date: $DATE"
           bash scripts/new-diary.sh "$DATE"
 
       - name: Commit and push if changed
@@ -34,5 +35,6 @@ jobs:
             echo "No new diary entry to commit."
             exit 0
           fi
-          git commit -m "Add daily diary entry"
+          COMMIT_DATE=$(date +%Y-%m-%d)
+          git commit -m "Add daily diary entry for $COMMIT_DATE"
           git push
