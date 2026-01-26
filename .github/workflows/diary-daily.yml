@@ -1,12 +1,12 @@
 name: Create daily diary entry
 
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
   schedule:
-    # JST 00:00 (UTC 15:00)
-    - cron: "*/10 * * * *"
+    # JST 22:30 (UTC 13:30)
+    - cron: "30 13 * * *"
   workflow_dispatch:
 
 permissions:
