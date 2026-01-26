@@ -1,6 +1,9 @@
 name: Create daily diary entry
 
 on:
+  push:
+    branches:
+      - main
   schedule:
     # JST 00:00 (UTC 15:00)
     - cron: "*/10 * * * *"
