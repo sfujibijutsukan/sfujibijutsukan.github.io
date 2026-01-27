@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* Font family configuration for Noto Sans JP (better Windows display) */
+@theme {
+  --font-sans: "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
 /* Accessibility: Skip to content link */
 .sr-only {
   position: absolute;
