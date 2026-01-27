@@ -27,20 +27,20 @@ const entries = (await getCollection("diary"))
     ) : (
       <ul class="space-y-6">
         {entries.map((entry) => (
-          <li class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-            <p class="text-sm text-gray-500">
-              <time datetime={entry.data.date.toISOString()}>
-                {entry.data.date.toLocaleDateString("ja-JP")}
-              </time>
-            </p>
-            <h2 class="mt-2 text-xl font-semibold text-gray-900">
-              <a class="hover:underline" href={`/blog/diary/${entry.slug}/`}>
+          <li class="rounded-2xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md">
+            <a href={`/blog/diary/${entry.slug}/`} class="block p-6">
+              <p class="text-sm text-gray-500">
+                <time datetime={entry.data.date.toISOString()}>
+                  {entry.data.date.toLocaleDateString("ja-JP")}
+                </time>
+              </p>
+              <h2 class="mt-2 text-xl font-semibold text-gray-900 hover:underline">
                 {entry.data.title}
-              </a>
-            </h2>
-            {entry.data.description && (
-              <p class="mt-2 text-gray-600">{entry.data.description}</p>
-            )}
+              </h2>
+              {entry.data.description && (
+                <p class="mt-2 text-gray-600">{entry.data.description}</p>
+              )}
+            </a>
           </li>
         ))}
       </ul>
