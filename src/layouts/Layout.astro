@@ -56,30 +56,33 @@ const robotsContent = [
 		<meta name="generator" content={Astro.generator} />
 		
 		<!-- Google Fonts: Noto Sans JP for better Windows display (loaded conditionally via script) -->
-		<script>
+		<script is:inline>
 			// Detect Windows and load Noto Sans JP font only on Windows
-			if (/Windows/.test(navigator.userAgent)) {
-				// Add preconnect hints
-				const preconnectGoogleFonts = document.createElement('link');
-				preconnectGoogleFonts.rel = 'preconnect';
-				preconnectGoogleFonts.href = 'https://fonts.googleapis.com';
-				document.head.appendChild(preconnectGoogleFonts);
-				
-				const preconnectGstatic = document.createElement('link');
-				preconnectGstatic.rel = 'preconnect';
-				preconnectGstatic.href = 'https://fonts.gstatic.com';
-				preconnectGstatic.crossOrigin = 'anonymous';
-				document.head.appendChild(preconnectGstatic);
-				
-				// Load Noto Sans JP font
-				const fontLink = document.createElement('link');
-				fontLink.rel = 'stylesheet';
-				fontLink.href = 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap';
-				document.head.appendChild(fontLink);
-				
-				// Apply Windows-specific font class to html element
-				document.documentElement.classList.add('windows-font');
-			}
+			// Runs immediately to apply font before first paint, but doesn't block parsing
+			(function() {
+				if (/Windows NT/i.test(navigator.userAgent)) {
+					// Add preconnect hints
+					const preconnectGoogleFonts = document.createElement('link');
+					preconnectGoogleFonts.rel = 'preconnect';
+					preconnectGoogleFonts.href = 'https://fonts.googleapis.com';
+					document.head.appendChild(preconnectGoogleFonts);
+					
+					const preconnectGstatic = document.createElement('link');
+					preconnectGstatic.rel = 'preconnect';
+					preconnectGstatic.href = 'https://fonts.gstatic.com';
+					preconnectGstatic.setAttribute('crossorigin', 'anonymous');
+					document.head.appendChild(preconnectGstatic);
+					
+					// Load Noto Sans JP font
+					const fontLink = document.createElement('link');
+					fontLink.rel = 'stylesheet';
+					fontLink.href = 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap';
+					document.head.appendChild(fontLink);
+					
+					// Apply Windows-specific font class to html element
+					document.documentElement.classList.add('windows-font');
+				}
+			})();
 		</script>
 		
 		<!-- Preload Critical Resources -->
