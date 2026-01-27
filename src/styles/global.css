@@ -1,8 +1,13 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* Font family configuration for Noto Sans JP (better Windows display) */
+/* Font family configuration - default to system fonts for better display on macOS/Linux */
 @theme {
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Windows-specific font override - use Noto Sans JP for better Windows display */
+.windows-font {
   --font-sans: "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
