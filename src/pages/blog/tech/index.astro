@@ -57,7 +57,7 @@ const tags = Array.from(
             class="rounded-2xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md"
             data-tags={(entry.data.tags ?? []).join(",")}
           >
-            <a href={`/blog/tech/${entry.slug}/`} class="block p-6">
+            <a href={`/blog/tech/${entry.slug}/`} class="block px-6 pt-6 pb-3">
               <p class="text-sm text-gray-500">
                 <time datetime={entry.data.date.toISOString()}>
                   {entry.data.date.toLocaleDateString("ja-JP")}
@@ -71,7 +71,7 @@ const tags = Array.from(
               )}
             </a>
             {entry.data.tags && entry.data.tags.length > 0 && (
-              <ul class="mt-0 flex flex-wrap gap-2 px-6 pb-6">
+              <ul class="flex flex-wrap gap-2 px-6 pb-3">
                 {entry.data.tags.map((tag) => (
                   <li>
                     <button
