@@ -1,6 +1,6 @@
 export const SITE = {
   title: "sfujibijutsukan",
-  description: "A minimal, modern starter template for building fast websites with Astro",
+  description: "meets sfujibijutsukan",
   defaultLanguage: "en",
   url: "https://sfuji.org", // Update this with your actual site URL
   author: "sfujibijutsukan",
