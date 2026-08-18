@@ -9,7 +9,7 @@ if [ -z "${DISCORD_WEBHOOK_URL:-}" ]; then
 fi
 
 # Get the current date in JST
-DATE=$(TZ=Asia/Tokyo date +%Y-%m-%d)
+DATE=$(TZ=Asia/Tokyo date +%Y%m%d)
 
 curl --fail-with-body -X POST \
   -H "Content-Type: application/json" \
