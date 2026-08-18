@@ -1,0 +1,26 @@
+name: Notify Discord that write diary entry
+
+on:
+  workflow_dispatch:
+  schedule:
+    # JST 21:00 (UTC 12:00)
+    - cron: "0 12 * * *"
+
+jobs:
+  send-discord-notification:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Make notify-discord.sh executable
+        working-directory: scripts
+        run: chmod +x notify-discord.sh
+      - name: Send notification to Discord
+        working-directory: scripts
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          bash notify-discord.sh
