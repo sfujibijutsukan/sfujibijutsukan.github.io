@@ -6,6 +6,8 @@ on:
     # JST 21:00 (UTC 12:00)
     - cron: "0 12 * * *"
 
+permissions: {}
+
 jobs:
   notify-discord:
     runs-on: ubuntu-latest
