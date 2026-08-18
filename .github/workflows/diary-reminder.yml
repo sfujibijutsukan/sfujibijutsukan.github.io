@@ -1,0 +1,26 @@
+name: Daily diary reminder
+
+on:
+  workflow_dispatch:
+  schedule:
+    # JST 21:00 (UTC 12:00)
+    - cron: "0 12 * * *"
+
+jobs:
+  notify-discord:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send diary reminder to Discord
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          if [ -z "$DISCORD_WEBHOOK_URL" ]; then
+            echo "DISCORD_WEBHOOK_URL secret is not set."
+            exit 1
+          fi
+
+          payload='{"content":"📝 21時です。日記を書きましょう！"}'
+          curl -f -X POST \
+            -H "Content-Type: application/json" \
+            -d "$payload" \
+            "$DISCORD_WEBHOOK_URL"
