@@ -1,6 +1,6 @@
 ---
 date: "2026-01-22"
-title: "efootballから学ぶAdguard Home(DNS)"
+title: "eFootballから学ぶAdguard Home(DNS)"
 draft: true
 tags: ["dns","adguardhome", "efootball"]
 ---
@@ -33,6 +33,10 @@ eFootballのオンライン対戦ができなくなった
 Adguard Homeのフィルタリングをオフにした状態で試合をしてみても、できない
 
 →　Adguard Homeのフィルタリングは無罪！
+
+検証中にeFootballのオンライン対戦のマナーレベルがBに下がってしまった。
+
+代償は思ったより大きい。
 
 ### 他のAdguard Homeの設定が原因なのかを検証
 
