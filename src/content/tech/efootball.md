@@ -19,6 +19,8 @@ eFootballのオンライン対戦ができなくなった
 - Adguard HomeのUpstream DNSの設定が原因
 - これを8.8.8.8に変更したらオンライン対戦ができるようになった
 
+![change](./fig/adguard.drawio.svg)
+
 ## 問題の切り分け
 
 ### そもそもAdguard Homeが原因なのかを検証
@@ -26,7 +28,7 @@ eFootballのオンライン対戦ができなくなった
 - 4G回線で試してみると、オンライン対戦ができる。
 - Wi-Fi環境で、DNSサーバを8.8.8.8(Googleが提供するDNS)に変更してみると、問題なくオンライン対戦ができるようになった。
 
-→　Adguard Homeが原因！
+→　Adguard Homeが原因だろう
 
 ### Adguard Homeのフィルタリングが原因なのかを検証
 
