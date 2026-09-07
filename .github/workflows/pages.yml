@@ -20,6 +20,28 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
+      - name: Sanitize draw.io SVG files
+        shell: bash
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+          import re
+
+          for path in Path(".").rglob("*.drawio.svg"):
+              text = path.read_text(encoding="utf-8")
+              cleaned, count = re.subn(
+                  r'\s+content="&lt;mxfile&gt;.*?&lt;/mxfile&gt;"',
+                  "",
+                  text,
+                  count=1,
+                  flags=re.DOTALL,
+              )
+              if count:
+                  path.write_text(cleaned, encoding="utf-8")
+                  print(f"Sanitized: {path}")
+              else:
+                  print(f"No embedded draw.io metadata: {path}")
+          PY
       - name: Install, build, and upload your site
         uses: withastro/action@v3
         with:
