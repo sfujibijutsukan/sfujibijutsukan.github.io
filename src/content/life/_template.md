@@ -2,7 +2,7 @@
 date: "2026-01-22"
 title: "Untitiled"
 draft: true
-tags: ["githubpages","astro"]
+tags: ["断捨離","生活"]
 ---
 
 ここに本文を書きましょう
