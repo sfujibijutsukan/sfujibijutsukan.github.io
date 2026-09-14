@@ -4,7 +4,10 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
+    "diagrams:export": "node scripts/export-diagrams.mjs",
+    "predev": "npm run diagrams:export",
     "dev": "astro dev",
+    "prebuild": "npm run diagrams:export",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
