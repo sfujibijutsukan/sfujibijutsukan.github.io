@@ -1,6 +1,6 @@
 ---
 date: "2026-01-22"
-title: "Untitiled"
+title: "Untitled"
 draft: true
 tags: ["断捨離","生活"]
 ---
