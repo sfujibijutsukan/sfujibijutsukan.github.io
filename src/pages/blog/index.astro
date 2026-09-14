@@ -8,7 +8,7 @@ import { SITE } from "../../config/site.mjs";
 
 <Layout
   title={`Blog | ${SITE.title}`}
-  description="技術ブログと日記を分けて掲載します。"
+  description="技術、日記、生活、旅のブログを分けて掲載します。"
   canonicalURL={`${SITE.url}/blog`}
 >
   <Header />
@@ -19,7 +19,7 @@ import { SITE } from "../../config/site.mjs";
       </ScrollReveal>
       <ScrollReveal client:load delay={0.1}>
         <p class="text-lg text-gray-600 mb-10">
-          技術ブログと日記を分けて書いています。
+          技術、日記、生活、旅の記録を分けて書いています。
         </p>
       </ScrollReveal>
 
@@ -29,7 +29,7 @@ import { SITE } from "../../config/site.mjs";
             href="/blog/tech"
             class="block rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-lg transition-shadow"
           >
-            <h2 class="text-xl font-semibold text-gray-900">技術ブログ</h2>
+            <h2 class="text-xl font-semibold text-gray-900">技術</h2>
             <p class="mt-2 text-gray-600">開発メモや技術的な話題。</p>
           </a>
         </ScrollReveal>
@@ -40,6 +40,24 @@ import { SITE } from "../../config/site.mjs";
           >
             <h2 class="text-xl font-semibold text-gray-900">日記</h2>
             <p class="mt-2 text-gray-600">日々の記録。</p>
+          </a>
+        </ScrollReveal>
+        <ScrollReveal client:load delay={0.4}>
+          <a
+            href="/blog/life"
+            class="block rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-lg transition-shadow"
+          >
+            <h2 class="text-xl font-semibold text-gray-900">生活</h2>
+            <p class="mt-2 text-gray-600">暮らしの工夫や日々の気づき。</p>
+          </a>
+        </ScrollReveal>
+        <ScrollReveal client:load delay={0.5}>
+          <a
+            href="/blog/journey"
+            class="block rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-lg transition-shadow"
+          >
+            <h2 class="text-xl font-semibold text-gray-900">旅</h2>
+            <p class="mt-2 text-gray-600">旅先で見たものや移動の記録。</p>
           </a>
         </ScrollReveal>
       </div>
