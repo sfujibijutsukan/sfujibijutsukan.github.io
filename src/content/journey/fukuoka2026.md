@@ -5,19 +5,33 @@ draft: false
 tags: ["福岡","湯布院","旅行","2026"]
 ---
 
+1泊2日で博多と湯布院に行ってきました
+
+その記録を残しておきます
+
+![関西](/images/blog/journey/fukuoka2026/airplane.jpeg)
+
 関西は雨
 
 これから福岡にたちます
 
-![関西](/images/blog/journey/fukuoka2026/airplane.jpeg)
+![八橋](/images/blog/journey/fukuoka2026/yatsuhashi.jpeg)
 
-生八ツ橋をいただく
+### 機内で生八ツ橋をいただく
+
+<br>
 
 ANAのビーフコンソメスープは
 
 うまい
 
-![八橋](/images/blog/journey/fukuoka2026/yatsuhashi.jpeg)
+![お手ふき](/images/blog/journey/fukuoka2026/tabekake.jpeg)
+
+### 生八ツ橋うまい！
+
+ひっさしぶりに食べた気がする
+
+<br>
 
 お手ふきいただけてありがたいなあ
 
@@ -33,7 +47,6 @@ ANAのビーフコンソメスープは
 
 聞いてみて
 
-![お手ふき](/images/blog/journey/fukuoka2026/tabekake.jpeg)
 
 ビーフコンソメのカップとともに八ツ橋のゴミもCAさんが回収してくれました
 
@@ -68,33 +81,36 @@ Oh, thank youとか言いながら
 
 <br>
 
-やわらかそうな雲がたくさんありました
-
 ![雲](/images/blog/journey/fukuoka2026/kumo.jpeg)
 
-### 福岡到着！
+やわらかそうな雲がたくさんありました
 
 <br>
 
-パン屋みたいな軒下がついたローソンもありました
+### 福岡到着！！
 
 ![lawson](/images/blog/journey/fukuoka2026/lawson.jpeg)
 
-福岡名物ごまさばをいただきます
+### パン屋みたいな軒下がついたローソンがありました
+
+パン屋みたいな軒下のついたローソンから少し歩いて...
 
 ![gomasaba](/images/blog/journey/fukuoka2026/gomasaba.jpeg)
+
+### 福岡名物ごまさばをいただきます
+
+![まつじゅん](/images/blog/journey/fukuoka2026/matsujun.jpeg)
 
 なんと
 
 まつじゅんが食べたものがありました
 
-![まつじゅん](/images/blog/journey/fukuoka2026/matsujun.jpeg)
+
+![torosaba](/images/blog/journey/fukuoka2026/torosaba.jpeg)
 
 まつじゅんが食べたトロサバです
 
 これほんとにうまいぞ
-
-![torosaba](/images/blog/journey/fukuoka2026/torosaba.jpeg)
 
 その後ホテルに荷物を預けに行った後
 
@@ -126,11 +142,12 @@ Oh, thank youとか言いながら
 
 <br>
 
-超ときめき宣伝部のライブにも行ってみました！
-
-いい写真があればぜひSNSにアップしてくださいとのことだったので。
 
 ![ライブ](/images/blog/journey/fukuoka2026/tokimeki.jpeg)
+
+### 超ときめき宣伝部のライブにも行ってみました！
+
+いい写真があればぜひSNSにアップしてくださいとのことだったので
 
 <br>
 
@@ -140,7 +157,7 @@ Oh, thank youとか言いながら
 
 ![kaidan](/images/blog/journey/fukuoka2026/kaidan.jpeg)
 
-入り口が高級すぎる
+## 入り口が高級すぎる
 
 トムとジェリーの天国と地獄って話を思い出しました
 
@@ -171,7 +188,7 @@ Oh, thank youとか言いながら
 
 ![もつ鍋](/images/blog/journey/fukuoka2026/motsunabe.jpeg)
 
-もつ鍋が来ました！
+### もつ鍋が来ました！
 
 もつ鍋そこまで好きじゃなかったんだけど
 
@@ -200,14 +217,15 @@ Oh, thank youとか言いながら
 
 ![hutari](/images/blog/journey/fukuoka2026/hutari.jpeg)
 
-ふたりの世界
+ふたりの世界(あいみょん)
 
 
 <br>
 
-11階建ての一蘭がありました
 
 ![itiran](/images/blog/journey/fukuoka2026/itiran.jpeg)
+
+### 11階建ての一蘭がありました
 
 これでもめちゃくちゃ並んでました
 
@@ -217,7 +235,7 @@ Oh, thank youとか言いながら
 <br>
 
 
-### 2日目！！
+## 2日目！！
 
 サービスエリアで肉そばをいただきました
 
@@ -226,4 +244,26 @@ Oh, thank youとか言いながら
 こういうのがいいんだよなあ
 
 ![soba](/images/blog/journey/fukuoka2026/soba.jpeg)
+
+
+![keshiki2](/images/blog/journey/fukuoka2026/keshiki2.jpeg)
+
+![miti](/images/blog/journey/fukuoka2026/miti.jpeg)
+
+![ie](/images/blog/journey/fukuoka2026/ie.jpeg)
+
+![huro](/images/blog/journey/fukuoka2026/huro.jpeg)
+
+![udon](/images/blog/journey/fukuoka2026/udon.jpeg)
+
+平打ち麺で美味かったです！
+
+![pudding](/images/blog/journey/fukuoka2026/pudding.jpeg)
+
+途中のサービスエリアでプリンをいただきました
+
+![omiyage](/images/blog/journey/fukuoka2026/omiyage.jpeg)
+
+
+![airplane2](/images/blog/journey/fukuoka2026/airplane2.jpeg)
 
