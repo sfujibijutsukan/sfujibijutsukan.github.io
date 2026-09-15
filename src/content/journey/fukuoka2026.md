@@ -47,6 +47,7 @@ ANAのビーフコンソメスープは
 
 聞いてみて
 
+<br>
 
 ビーフコンソメのカップとともに八ツ橋のゴミもCAさんが回収してくれました
 
@@ -74,6 +75,10 @@ ANAのビーフコンソメスープは
 
 (そのカップ)もらうよって言ってくれたんだよ
 
+その男性かっこよかったな
+
+そして
+
 Oh, thank youとか言いながら
 
 また眠りに入った気がするなあ
@@ -99,11 +104,17 @@ Oh, thank youとか言いながら
 
 ### 福岡名物ごまさばをいただきます
 
+博多ごまさば屋さんです
+
+ついたら列ができてました
+
+15分ぐらい並んだかなあ
+
 ![まつじゅん](/images/blog/journey/fukuoka2026/matsujun.jpeg)
 
 なんと
 
-まつじゅんが食べたものがありました
+まつじゅんが食べたトロサバがありました
 
 
 ![torosaba](/images/blog/journey/fukuoka2026/torosaba.jpeg)
@@ -111,6 +122,8 @@ Oh, thank youとか言いながら
 まつじゅんが食べたトロサバです
 
 これほんとにうまいぞ
+
+<br>
 
 その後ホテルに荷物を預けに行った後
 
@@ -122,6 +135,8 @@ Oh, thank youとか言いながら
 
 綺麗すぎるだろ
 
+...
+
 俺が人生で初めて海に行ったのは
 
 小学3年の頃ぐらいだったかな
@@ -132,7 +147,7 @@ Oh, thank youとか言いながら
 
 おなかの調子を狂わせて
 
-吐き出してしまったんだよな
+吐いちゃったんだよな
 
 ダイアンのラジオで
 
@@ -147,7 +162,9 @@ Oh, thank youとか言いながら
 
 ### 超ときめき宣伝部のライブにも行ってみました！
 
-いい写真があればぜひSNSにアップしてくださいとのことだったので
+<br>
+
+<br>
 
 <br>
 
@@ -159,11 +176,31 @@ Oh, thank youとか言いながら
 
 ## 入り口が高級すぎる
 
+入るのを躊躇う入り口してました
+
+...
+
 トムとジェリーの天国と地獄って話を思い出しました
 
 割とトラウマ話だったので
 
 印象に残っています
+
+地獄の番人に
+
+何時までにジェリーに許しを得ないと
+
+地獄行きだとか言われて
+
+ジェリーのもとに行くんだけど
+
+ジェリーは真にうけてくれないのよ
+
+時間いっぱいギリギリでさ
+
+ジェリーが紙にサインしてくれるんだけど
+
+タイムオーバーでさ
 
 不死身のトムが
 
@@ -176,7 +213,7 @@ Oh, thank youとか言いながら
 
 ![gyutan](/images/blog/journey/fukuoka2026/gyutan.jpeg)
 
-牛タンのローストが来ました
+突き出しで牛タンのローストが来ました
 
 うまいですねえ
 
@@ -205,13 +242,18 @@ Oh, thank youとか言いながら
 
 ![mizu](/images/blog/journey/fukuoka2026/mizu.jpeg)
 
-かわいい
+めちゃくちゃ喉が渇いて
+
+かわいい水をゲットしました
 
 
 <br>
-中洲の夜景はいいね
+
+少し歩きまして...
 
 ![fukuoka](/images/blog/journey/fukuoka2026/fukuoka.jpeg)
+
+中洲の夜景はいいね
 
 <br>
 
@@ -237,33 +279,94 @@ Oh, thank youとか言いながら
 
 ## 2日目！！
 
+車を借りて湯布院に向かいます
+
+![soba](/images/blog/journey/fukuoka2026/soba.jpeg)
+
 サービスエリアで肉そばをいただきました
 
 肉そばの肉は安い感じの
 
 こういうのがいいんだよなあ
 
-![soba](/images/blog/journey/fukuoka2026/soba.jpeg)
-
-
 ![keshiki2](/images/blog/journey/fukuoka2026/keshiki2.jpeg)
+
+### 湯布院到着!!
+
+ええねこの景色
+
+落ち着くわあ
 
 ![miti](/images/blog/journey/fukuoka2026/miti.jpeg)
 
+駐車場から下ると
+
+温泉があります
+
 ![ie](/images/blog/journey/fukuoka2026/ie.jpeg)
+
+非常に雰囲気のある建物が現れました
+
+ここが男湯です
 
 ![huro](/images/blog/journey/fukuoka2026/huro.jpeg)
 
+露天風呂が二つあり、
+
+手前がぬるめで
+
+奥が熱めでした
+
+手前が好みでしたね
+
+日曜に行ったんですが
+
+客は僕たちと
+
+あと3組ぐらいだったかな
+
+15人ぐらいいたと思うんだけど
+
+お風呂が非常に広かったので
+
+ゆったりできましたね
+
+非常に満足度高いです
+
 ![udon](/images/blog/journey/fukuoka2026/udon.jpeg)
+
+### 湯布院を散策
+
+うどんをいただきました
 
 平打ち麺で美味かったです！
 
 ![pudding](/images/blog/journey/fukuoka2026/pudding.jpeg)
 
+空港へ向かいます
+
 途中のサービスエリアでプリンをいただきました
 
 ![omiyage](/images/blog/journey/fukuoka2026/omiyage.jpeg)
 
+冷凍のごまさばをお土産に買いました
+
+
+
+![chillout](/images/blog/journey/fukuoka2026/chillout.jpeg)
+
+あんまりよくわからない飲み物をいただきました
+
+僕にはあんまりよくわからなかったです
 
 ![airplane2](/images/blog/journey/fukuoka2026/airplane2.jpeg)
 
+帰りは晴れ
+
+湯布院は博多から車で1時間半ぐらいで行けるので
+
+博多への旅行を計画している人にはおすすめです
+
+では次の旅路に向かいたいと思います
+
+...
