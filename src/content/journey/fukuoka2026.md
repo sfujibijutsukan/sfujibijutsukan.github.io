@@ -5,9 +5,9 @@ draft: false
 tags: ["博多","湯布院","旅行","2026"]
 ---
 
-1泊2日で博多と湯布院に行ってきました
+### 1泊2日で博多と湯布院に行ってきました
 
-その備忘録です
+このブログはその備忘録です
 
 <br>
 
@@ -17,41 +17,45 @@ tags: ["博多","湯布院","旅行","2026"]
 
 これから福岡にたちます
 
+<br><br>
+
 ![八橋](/images/blog/journey/fukuoka2026/yatsuhashi.jpeg)
 
 機内で生八ツ橋をいただく
 
 <br>
 
-ANAのビーフコンソメスープは
+### ANAのビーフコンソメスープは
 
-うまい
+### うまい
+
+<br>
 
 ![お手ふき](/images/blog/journey/fukuoka2026/tabekake.jpeg)
 
-### 生八ツ橋結構うまい
+### 生八ツ橋うまい
 
 ひっさしぶりに食べた気がする
 
 <br>
 
-お手ふきいただけてありがたかったです
+あと、お手ふきいただけてありがたかったです
+
+...
 
 ダイアンのラジオで
 
-飛行機の隣の席のおっさんがむせて
+飛行機で隣の席のおっさんがむせて
 
 口に含んでたおにぎりを吐き出して
 
 かけられた話おもろいから
 
-みんな
+みんな聞いてみて
 
-聞いてみて
+<br><br>
 
-<br>
-
-ビーフコンソメのカップとともに八ツ橋のゴミもCAさんが回収してくれました
+ビーフコンソメのカップとともに八ツ橋のごみもCAさんが回収してくれました
 
 ...
 
@@ -94,7 +98,7 @@ Oh, thank youとか言いながら
 
 <br>
 
-隣の席の人が
+隣の席の女子中学生みたいな子が
 
 窓の外を見ようとしてたんだよ
 
@@ -102,21 +106,19 @@ Oh, thank youとか言いながら
 
 俺が見てる窓からは見えないんだよね
 
-そこで一個前の窓を開けてあげたんだよ
+俺もめちゃくちゃ外見てるとこだったから
+
+そこでさ
+
+一個前の窓を開けてあげたんだよ
 
 隣の子
 
 その窓からめちゃくちゃ外の景色見てたわ
 
-<br>
+<br><br><br><br><br><br><br><br><br><br>
 
 ### 福岡到着！！
-
-![lawson](/images/blog/journey/fukuoka2026/lawson.jpeg)
-
-### パン屋みたいな軒下がついたローソンがありました
-
-パン屋みたいな軒下のついたローソンから少し歩いて...
 
 ![gomasaba](/images/blog/journey/fukuoka2026/gomasaba.jpeg)
 
@@ -141,9 +143,17 @@ Oh, thank youとか言いながら
 
 これほんとにうまいぞ
 
+<br><br>
+
+![lawson](/images/blog/journey/fukuoka2026/lawson.jpeg)
+
+### パン屋みたいな軒下がついたローソンもありました
+
+パン屋みたいな軒下のついたローソンから少し歩いて...
+
 <br>
 
-その後ホテルに荷物を預けに行った後
+ホテルに荷物を預けに行った後
 
 車を借りて海へ
 
@@ -165,7 +175,7 @@ Oh, thank youとか言いながら
 
 ガストで食べたハンバーグかなんかが
 
-おなかの調子を狂わせて
+おなかの調子をおかしくさせて
 
 吐いちゃったんだよな
 
@@ -194,7 +204,7 @@ Oh, thank youとか言いながら
 
 ![kaidan](/images/blog/journey/fukuoka2026/kaidan.jpeg)
 
-## 入り口が高級すぎる
+## 入り口が高級すぎるだろ
 
 入るのを躊躇う入り口してました
 
@@ -215,6 +225,10 @@ Oh, thank youとか言いながら
 ジェリーのもとに行くんだけど
 
 ジェリーは真にうけてくれないのよ
+
+普段から騙し合いとかしてるからさ
+
+<br>
 
 トムは頑張って
 
@@ -245,7 +259,7 @@ Oh, thank youとか言いながら
 
 ![tamago](/images/blog/journey/fukuoka2026/tamago.jpeg)
 
-このだし巻き玉子、世界一美味かったです
+### このだし巻き玉子、世界一美味かったです
 
 
 ![もつ鍋](/images/blog/journey/fukuoka2026/motsunabe.jpeg)
@@ -271,14 +285,23 @@ Oh, thank youとか言いながら
 
 かわいい水をゲットしました
 
+<br><br><br>
 
-<br>
 
-少し歩いて...
+![itiran](/images/blog/journey/fukuoka2026/itiran.jpeg)
+
+### 11階建ての一蘭がありました
+
+これでもめちゃくちゃ並んでました
+
+さすが総本山
+
+<br><br><br>
+
 
 ![fukuoka](/images/blog/journey/fukuoka2026/fukuoka.jpeg)
 
-中洲の夜景はいいね
+中洲の夜景を見に来ました
 
 いい表現かわからんけど
 
@@ -290,20 +313,7 @@ Oh, thank youとか言いながら
 
 ふたりの世界(あいみょん)
 
-
-<br>
-
-
-![itiran](/images/blog/journey/fukuoka2026/itiran.jpeg)
-
-### 11階建ての一蘭がありました
-
-これでもめちゃくちゃ並んでました
-
-さすが総本山
-
-<br>
-<br>
+<br><br><br>
 
 
 ## 2日目！！
@@ -317,6 +327,8 @@ Oh, thank youとか言いながら
 肉そばの肉は安い感じの
 
 こういうのがいいんだよなあ
+
+<br><br>
 
 ![keshiki2](/images/blog/journey/fukuoka2026/keshiki2.jpeg)
 
@@ -370,11 +382,15 @@ Oh, thank youとか言いながら
 
 平打ち麺で美味かったです！
 
-![pudding](/images/blog/journey/fukuoka2026/pudding.jpeg)
+<br><br><br>
 
 空港へ向かいます
 
+![pudding](/images/blog/journey/fukuoka2026/pudding.jpeg)
+
 途中のサービスエリアでプリンをいただきました
+
+美味しかったです
 
 ![omiyage](/images/blog/journey/fukuoka2026/omiyage.jpeg)
 
