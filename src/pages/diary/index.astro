@@ -1,41 +1,68 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import { getFirstContentImage } from "../../utils/contentImages";
 
 const entries = (await getCollection("diary"))
-  .filter((entry) => !entry.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+	.filter((entry) => !entry.data.draft)
+	.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+	.map((entry) => ({ entry, thumbnail: getFirstContentImage(entry.body) }));
 ---
 
 <Layout title="Diary" description="日々の記録">
-  <main id="main-content" class="mx-auto max-w-3xl px-6 py-12">
-    <header class="mb-8">
-      <h1 class="text-3xl font-semibold text-gray-900">Diary</h1>
-      <p class="mt-2 text-gray-600">日々の記録をまとめています。</p>
-    </header>
+	<main id="main-content" class="mx-auto max-w-3xl px-6 py-12">
+		<header class="mb-8">
+			<h1 class="text-3xl font-semibold text-gray-900">Diary</h1>
+			<p class="mt-2 text-gray-600">日々の記録をまとめています。</p>
+		</header>
 
-    {entries.length === 0 ? (
-      <p class="text-gray-600">まだ記事がありません。</p>
-    ) : (
-      <ul class="space-y-6">
-        {entries.map((entry) => (
-          <li class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-            <p class="text-sm text-gray-500">
-              <time datetime={entry.data.date.toISOString()}>
-                {entry.data.date.toLocaleDateString("ja-JP")}
-              </time>
-            </p>
-            <h2 class="mt-2 text-xl font-semibold text-gray-900">
-              <a class="hover:underline" href={`/diary/${entry.slug}/`}>
-                {entry.data.title}
-              </a>
-            </h2>
-            {entry.data.description && (
-              <p class="mt-2 text-gray-600">{entry.data.description}</p>
-            )}
-          </li>
-        ))}
-      </ul>
-    )}
-  </main>
+		{
+			entries.length === 0 ? (
+				<p class="text-gray-600">まだ記事がありません。</p>
+			) : (
+				<ul class="space-y-6">
+					{entries.map(({ entry, thumbnail }) => (
+						<li
+							class:list={[
+								"grid min-h-32 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm",
+								thumbnail &&
+									"grid-cols-[minmax(0,1fr)_7rem] sm:grid-cols-[minmax(0,1fr)_11rem]",
+							]}
+						>
+							<div class="min-w-0 p-6">
+								<p class="text-sm text-gray-500">
+									<time datetime={entry.data.date.toISOString()}>
+										{entry.data.date.toLocaleDateString("ja-JP")}
+									</time>
+								</p>
+								<h2 class="mt-2 text-xl font-semibold text-gray-900">
+									<a class="hover:underline" href={`/diary/${entry.slug}/`}>
+										{entry.data.title}
+									</a>
+								</h2>
+								{entry.data.description && (
+									<p class="mt-2 text-gray-600">{entry.data.description}</p>
+								)}
+							</div>
+							{thumbnail && (
+								<a
+									href={`/diary/${entry.slug}/`}
+									aria-label={`${entry.data.title}を読む`}
+									class="block h-full"
+								>
+									<img
+										src={thumbnail}
+										alt=""
+										class="block h-full min-h-32 w-full object-cover"
+										loading="lazy"
+										decoding="async"
+									/>
+								</a>
+							)}
+						</li>
+					))}
+				</ul>
+			)
+		}
+	</main>
 </Layout>

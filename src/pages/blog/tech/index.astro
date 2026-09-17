@@ -4,165 +4,193 @@ import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 import { getCollection } from "astro:content";
 import { SITE } from "../../../config/site.mjs";
+import { getFirstContentImage } from "../../../utils/contentImages";
 
 const entries = (await getCollection("tech"))
-  .filter((entry) => !entry.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+	.filter((entry) => !entry.data.draft)
+	.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+	.map((entry) => ({ entry, thumbnail: getFirstContentImage(entry.body) }));
 
 const tags = Array.from(
-  new Set(entries.flatMap((entry) => entry.data.tags ?? []))
+	new Set(entries.flatMap(({ entry }) => entry.data.tags ?? []))
 ).sort((a, b) => a.localeCompare(b, "ja"));
 ---
 
 <Layout
-  title={`Tech Blog | ${SITE.title}`}
-  description="技術ブログ一覧"
-  canonicalURL={`${SITE.url}/blog/tech`}
+	title={`Tech Blog | ${SITE.title}`}
+	description="技術ブログ一覧"
+	canonicalURL={`${SITE.url}/blog/tech`}
 >
-  <Header />
-  <main id="main-content" class="mx-auto max-w-3xl px-6 py-12">
-    <header class="mb-8">
-      <h1 class="text-3xl font-semibold text-gray-900">技術ブログ</h1>
-      <p class="mt-2 text-gray-600">開発メモや技術的な話題。</p>
-    </header>
+	<Header />
+	<main id="main-content" class="mx-auto max-w-3xl px-6 py-12">
+		<header class="mb-8">
+			<h1 class="text-3xl font-semibold text-gray-900">技術ブログ</h1>
+			<p class="mt-2 text-gray-600">開発メモや技術的な話題。</p>
+		</header>
 
-    {tags.length > 0 && (
-      <div class="mb-6 flex flex-wrap items-center gap-2" id="tag-filters">
-        <button
-          type="button"
-          class="rounded-full border border-gray-900 bg-gray-900 px-3 py-1 text-xs text-white"
-          data-tag="__all"
-        >
-          Tag
-        </button>
-        {tags.map((tag) => (
-          <button
-            type="button"
-            data-tag={tag}
-            class="rounded-full border border-gray-200 bg-white px-3 py-1 text-xs text-gray-600 transition-colors hover:bg-gray-50"
-            aria-pressed="false"
-          >
-            {tag}
-          </button>
-        ))}
-      </div>
-    )}
+		{
+			tags.length > 0 && (
+				<div class="mb-6 flex flex-wrap items-center gap-2" id="tag-filters">
+					<button
+						type="button"
+						class="rounded-full border border-gray-900 bg-gray-900 px-3 py-1 text-xs text-white"
+						data-tag="__all"
+					>
+						Tag
+					</button>
+					{tags.map((tag) => (
+						<button
+							type="button"
+							data-tag={tag}
+							class="rounded-full border border-gray-200 bg-white px-3 py-1 text-xs text-gray-600 transition-colors hover:bg-gray-50"
+							aria-pressed="false"
+						>
+							{tag}
+						</button>
+					))}
+				</div>
+			)
+		}
 
-    {entries.length === 0 ? (
-      <p class="text-gray-600">まだ記事がありません。</p>
-    ) : (
-      <ul class="space-y-6">
-        {entries.map((entry) => (
-          <li
-            class="rounded-2xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md"
-            data-tags={(entry.data.tags ?? []).join(",")}
-          >
-            <a href={`/blog/tech/${entry.slug}/`} class="block px-6 pt-6 pb-3">
-              <p class="text-sm text-gray-500">
-                <time datetime={entry.data.date.toISOString()}>
-                  {entry.data.date.toLocaleDateString("ja-JP")}
-                </time>
-              </p>
-              <h2 class="mt-2 text-xl font-semibold text-gray-900 hover:underline">
-                {entry.data.title}
-              </h2>
-              {entry.data.description && (
-                <p class="mt-2 text-gray-600">{entry.data.description}</p>
-              )}
-            </a>
-            {entry.data.tags && entry.data.tags.length > 0 && (
-              <ul class="flex flex-wrap gap-2 px-6 pb-3">
-                {entry.data.tags.map((tag) => (
-                  <li>
-                    <button
-                      type="button"
-                      class="text-xs rounded-full bg-gray-100 px-2 py-1 text-gray-600 hover:bg-gray-200"
-                      data-tag-toggle={tag}
-                    >
-                      {tag}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
-        ))}
-      </ul>
-    )}
-  </main>
-  <Footer />
+		{
+			entries.length === 0 ? (
+				<p class="text-gray-600">まだ記事がありません。</p>
+			) : (
+				<ul class="space-y-6">
+					{entries.map(({ entry, thumbnail }) => (
+						<li
+							class:list={[
+								"grid min-h-32 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md",
+								thumbnail &&
+									"grid-cols-[minmax(0,1fr)_7rem] sm:grid-cols-[minmax(0,1fr)_11rem]",
+							]}
+							data-tags={(entry.data.tags ?? []).join(",")}
+						>
+							<div class="min-w-0">
+								<a
+									href={`/blog/tech/${entry.slug}/`}
+									class="block px-6 pt-6 pb-3"
+								>
+									<p class="text-sm text-gray-500">
+										<time datetime={entry.data.date.toISOString()}>
+											{entry.data.date.toLocaleDateString("ja-JP")}
+										</time>
+									</p>
+									<h2 class="mt-2 text-xl font-semibold text-gray-900 hover:underline">
+										{entry.data.title}
+									</h2>
+									{entry.data.description && (
+										<p class="mt-2 text-gray-600">{entry.data.description}</p>
+									)}
+								</a>
+								{entry.data.tags && entry.data.tags.length > 0 && (
+									<ul class="flex flex-wrap gap-2 px-6 pb-3">
+										{entry.data.tags.map((tag) => (
+											<li>
+												<button
+													type="button"
+													class="text-xs rounded-full bg-gray-100 px-2 py-1 text-gray-600 hover:bg-gray-200"
+													data-tag-toggle={tag}
+												>
+													{tag}
+												</button>
+											</li>
+										))}
+									</ul>
+								)}
+							</div>
+							{thumbnail && (
+								<a
+									href={`/blog/tech/${entry.slug}/`}
+									aria-label={`${entry.data.title}を読む`}
+									class="block h-full"
+								>
+									<img
+										src={thumbnail}
+										alt=""
+										class="block h-full min-h-32 w-full object-cover"
+										loading="lazy"
+										decoding="async"
+									/>
+								</a>
+							)}
+						</li>
+					))}
+				</ul>
+			)
+		}
+	</main>
+	<Footer />
 </Layout>
 
 <script>
-  const filterContainer = document.getElementById('tag-filters');
-  const tagButtons = filterContainer
-    ? Array.from(filterContainer.querySelectorAll('button[data-tag]'))
-    : [];
-  const listItems = Array.from(
-    document.querySelectorAll('li[data-tags]')
-  );
+	const filterContainer = document.getElementById("tag-filters");
+	const tagButtons = filterContainer
+		? Array.from(filterContainer.querySelectorAll("button[data-tag]"))
+		: [];
+	const listItems = Array.from(document.querySelectorAll("li[data-tags]"));
 
-  const normalizeTag = (tag) => tag.trim().toLowerCase();
-  const activeTags = new Set();
+	const normalizeTag = (tag) => tag.trim().toLowerCase();
+	const activeTags = new Set();
 
-  const updateButtons = () => {
-    tagButtons.forEach((button) => {
-      const tag = button.dataset.tag;
-      if (tag === '__all') return;
-      const pressed = activeTags.has(normalizeTag(tag));
-      button.setAttribute('aria-pressed', String(pressed));
-      button.className = pressed
-        ? 'rounded-full border border-gray-900 bg-gray-900 px-3 py-1 text-xs text-white'
-        : 'rounded-full border border-gray-200 bg-white px-3 py-1 text-xs text-gray-600 transition-colors hover:bg-gray-50';
-    });
-  };
+	const updateButtons = () => {
+		tagButtons.forEach((button) => {
+			const tag = button.dataset.tag;
+			if (tag === "__all") return;
+			const pressed = activeTags.has(normalizeTag(tag));
+			button.setAttribute("aria-pressed", String(pressed));
+			button.className = pressed
+				? "rounded-full border border-gray-900 bg-gray-900 px-3 py-1 text-xs text-white"
+				: "rounded-full border border-gray-200 bg-white px-3 py-1 text-xs text-gray-600 transition-colors hover:bg-gray-50";
+		});
+	};
 
-  const applyFilter = () => {
-    if (activeTags.size === 0) {
-      listItems.forEach((item) => item.classList.remove('hidden'));
-      return;
-    }
+	const applyFilter = () => {
+		if (activeTags.size === 0) {
+			listItems.forEach((item) => item.classList.remove("hidden"));
+			return;
+		}
 
-    listItems.forEach((item) => {
-      const tags = (item.dataset.tags || '')
-        .split(',')
-        .map(normalizeTag)
-        .filter(Boolean);
-      const matches = Array.from(activeTags).every((tag) => tags.includes(tag));
-      item.classList.toggle('hidden', !matches);
-    });
-  };
+		listItems.forEach((item) => {
+			const tags = (item.dataset.tags || "")
+				.split(",")
+				.map(normalizeTag)
+				.filter(Boolean);
+			const matches = Array.from(activeTags).every((tag) => tags.includes(tag));
+			item.classList.toggle("hidden", !matches);
+		});
+	};
 
-  const toggleTag = (tag) => {
-    const normalized = normalizeTag(tag);
-    if (activeTags.has(normalized)) {
-      activeTags.delete(normalized);
-    } else {
-      activeTags.add(normalized);
-    }
-    updateButtons();
-    applyFilter();
-  };
+	const toggleTag = (tag) => {
+		const normalized = normalizeTag(tag);
+		if (activeTags.has(normalized)) {
+			activeTags.delete(normalized);
+		} else {
+			activeTags.add(normalized);
+		}
+		updateButtons();
+		applyFilter();
+	};
 
-  tagButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const tag = button.dataset.tag;
-      if (tag === '__all') {
-        activeTags.clear();
-        updateButtons();
-        applyFilter();
-        return;
-      }
-      toggleTag(tag);
-    });
-  });
+	tagButtons.forEach((button) => {
+		button.addEventListener("click", () => {
+			const tag = button.dataset.tag;
+			if (tag === "__all") {
+				activeTags.clear();
+				updateButtons();
+				applyFilter();
+				return;
+			}
+			toggleTag(tag);
+		});
+	});
 
-  document.querySelectorAll('[data-tag-toggle]').forEach((button) => {
-    button.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const tag = button.dataset.tagToggle;
-      if (tag) toggleTag(tag);
-    });
-  });
+	document.querySelectorAll("[data-tag-toggle]").forEach((button) => {
+		button.addEventListener("click", (e) => {
+			e.preventDefault();
+			e.stopPropagation();
+			const tag = button.dataset.tagToggle;
+			if (tag) toggleTag(tag);
+		});
+	});
 </script>

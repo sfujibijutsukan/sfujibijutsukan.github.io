@@ -4,56 +4,86 @@ import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 import { getCollection } from "astro:content";
 import { SITE } from "../../../config/site.mjs";
+import { getFirstContentImage } from "../../../utils/contentImages";
 
 const entries = (await getCollection("life"))
-  .filter((entry) => !entry.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+	.filter((entry) => !entry.data.draft)
+	.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+	.map((entry) => ({ entry, thumbnail: getFirstContentImage(entry.body) }));
 ---
 
 <Layout
-  title={`Life Blog | ${SITE.title}`}
-  description="生活ブログ一覧"
-  canonicalURL={`${SITE.url}/blog/life`}
+	title={`Life Blog | ${SITE.title}`}
+	description="生活ブログ一覧"
+	canonicalURL={`${SITE.url}/blog/life`}
 >
-  <Header />
-  <main id="main-content" class="mx-auto max-w-3xl px-6 py-12">
-    <header class="mb-8">
-      <h1 class="text-3xl font-semibold text-gray-900">生活ブログ</h1>
-      <p class="mt-2 text-gray-600">暮らしの工夫や日々の気づき。</p>
-    </header>
+	<Header />
+	<main id="main-content" class="mx-auto max-w-3xl px-6 py-12">
+		<header class="mb-8">
+			<h1 class="text-3xl font-semibold text-gray-900">生活ブログ</h1>
+			<p class="mt-2 text-gray-600">暮らしの工夫や日々の気づき。</p>
+		</header>
 
-    {entries.length === 0 ? (
-      <p class="text-gray-600">まだ記事がありません。</p>
-    ) : (
-      <ul class="space-y-6">
-        {entries.map((entry) => (
-          <li class="rounded-2xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md">
-            <a href={`/blog/life/${entry.slug}/`} class="block px-6 pt-6 pb-3">
-              <p class="text-sm text-gray-500">
-                <time datetime={entry.data.date.toISOString()}>
-                  {entry.data.date.toLocaleDateString("ja-JP")}
-                </time>
-              </p>
-              <h2 class="mt-2 text-xl font-semibold text-gray-900 hover:underline">
-                {entry.data.title}
-              </h2>
-              {entry.data.description && (
-                <p class="mt-2 text-gray-600">{entry.data.description}</p>
-              )}
-            </a>
-            {entry.data.tags && entry.data.tags.length > 0 && (
-              <ul class="flex flex-wrap gap-2 px-6 pb-6">
-                {entry.data.tags.map((tag) => (
-                  <li class="text-xs rounded-full bg-gray-100 px-2 py-1 text-gray-600">
-                    {tag}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
-        ))}
-      </ul>
-    )}
-  </main>
-  <Footer />
+		{
+			entries.length === 0 ? (
+				<p class="text-gray-600">まだ記事がありません。</p>
+			) : (
+				<ul class="space-y-6">
+					{entries.map(({ entry, thumbnail }) => (
+						<li
+							class:list={[
+								"grid min-h-32 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md",
+								thumbnail &&
+									"grid-cols-[minmax(0,1fr)_7rem] sm:grid-cols-[minmax(0,1fr)_11rem]",
+							]}
+						>
+							<div class="min-w-0">
+								<a
+									href={`/blog/life/${entry.slug}/`}
+									class="block px-6 pt-6 pb-3"
+								>
+									<p class="text-sm text-gray-500">
+										<time datetime={entry.data.date.toISOString()}>
+											{entry.data.date.toLocaleDateString("ja-JP")}
+										</time>
+									</p>
+									<h2 class="mt-2 text-xl font-semibold text-gray-900 hover:underline">
+										{entry.data.title}
+									</h2>
+									{entry.data.description && (
+										<p class="mt-2 text-gray-600">{entry.data.description}</p>
+									)}
+								</a>
+								{entry.data.tags && entry.data.tags.length > 0 && (
+									<ul class="flex flex-wrap gap-2 px-6 pb-6">
+										{entry.data.tags.map((tag) => (
+											<li class="text-xs rounded-full bg-gray-100 px-2 py-1 text-gray-600">
+												{tag}
+											</li>
+										))}
+									</ul>
+								)}
+							</div>
+							{thumbnail && (
+								<a
+									href={`/blog/life/${entry.slug}/`}
+									aria-label={`${entry.data.title}を読む`}
+									class="block h-full"
+								>
+									<img
+										src={thumbnail}
+										alt=""
+										class="block h-full min-h-32 w-full object-cover"
+										loading="lazy"
+										decoding="async"
+									/>
+								</a>
+							)}
+						</li>
+					))}
+				</ul>
+			)
+		}
+	</main>
+	<Footer />
 </Layout>
