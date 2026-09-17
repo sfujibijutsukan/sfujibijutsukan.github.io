@@ -1,12 +1,15 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
-import { getFirstContentImage } from "../../utils/contentImages";
+import { getContentThumbnail } from "../../utils/contentImages";
 
 const entries = (await getCollection("diary"))
 	.filter((entry) => !entry.data.draft)
 	.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-	.map((entry) => ({ entry, thumbnail: getFirstContentImage(entry.body) }));
+	.map((entry) => ({
+		entry,
+		thumbnail: getContentThumbnail(entry.body, entry.data.thumbnail),
+	}));
 ---
 
 <Layout title="Diary" description="日々の記録">

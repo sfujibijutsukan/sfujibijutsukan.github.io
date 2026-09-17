@@ -4,12 +4,15 @@ import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 import { getCollection } from "astro:content";
 import { SITE } from "../../../config/site.mjs";
-import { getFirstContentImage } from "../../../utils/contentImages";
+import { getContentThumbnail } from "../../../utils/contentImages";
 
 const entries = (await getCollection("journey"))
 	.filter((entry) => !entry.data.draft)
 	.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-	.map((entry) => ({ entry, thumbnail: getFirstContentImage(entry.body) }));
+	.map((entry) => ({
+		entry,
+		thumbnail: getContentThumbnail(entry.body, entry.data.thumbnail),
+	}));
 ---
 
 <Layout
