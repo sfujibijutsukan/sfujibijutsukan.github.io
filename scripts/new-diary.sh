@@ -34,7 +34,6 @@ title: "Untitled"
 draft: true
 ---
 
-ここに本文を書きましょう
 EOF
 
 echo "Created: $TARGET_FILE"
