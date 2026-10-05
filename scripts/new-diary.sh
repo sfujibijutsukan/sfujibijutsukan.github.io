@@ -30,7 +30,7 @@ fi
 cat <<EOF > "$TARGET_FILE"
 ---
 date: "$DATE_FORMATTED"
-title: "Untitled"
+title: ""
 draft: true
 ---
 
