@@ -1,5 +1,5 @@
 ---
-date: "2026-8-28"
+date: "2026-08-28"
 title: "自宅サーバ計画"
 draft: true
 tags: ["dc-at-home","macmini"]
