@@ -2,9 +2,9 @@ name: Notify Discord that write diary entry
 
 on:
   workflow_dispatch:
-  schedule:
+  # schedule:
     # JST 21:00 (UTC 12:00)
-    - cron: "0 12 * * *"
+    # - cron: "0 12 * * *"
 
 jobs:
   send-discord-notification:
