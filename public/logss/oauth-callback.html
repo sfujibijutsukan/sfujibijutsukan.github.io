@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><meta name="robots" content="noindex,nofollow"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-fqXrH+QiwtPa+zGDjc0Uls4u62bSISZbceSf6aoinLw='; style-src 'sha256-ev6wzZZRmRjM88vMNR4YK6egKHlemBQiWyQfeKfG6qQ='; base-uri 'none'; form-action 'none'"><title>Connect logss</title><style>:root{color-scheme:light dark;font-family:system-ui,sans-serif}body{max-width:38rem;margin:12vh auto;padding:1.5rem;line-height:1.6}a{display:inline-block;background:#2597a1;color:white;padding:.8rem 1.2rem;border-radius:.6rem;text-decoration:none}small{display:block;margin-top:2rem;opacity:.7}[hidden]{display:none}</style></head>
+<body><h1>Connect logss</h1><p id="message">Preparing the return to Obsidian…</p><a id="open" hidden>Open Obsidian</a><small>This page returns the authorization result to your vault. It does not request or store access tokens, load analytics, or save clip content.</small><noscript>Enable JavaScript to finish authorization, then start Connect again in logss.</noscript><script>(() => {
+  const query = new URLSearchParams(location.search);
+  history.replaceState(null, "", location.pathname);
+  const message = document.getElementById("message");
+  const link = document.getElementById("open");
+  try {
+    const state = query.get("state");
+    const code = query.get("code");
+    const error = query.get("error");
+    if (!state || state.length > 2048 || query.getAll("state").length !== 1 || (!code && !error)) throw Error();
+    const bytes = Uint8Array.from(atob(state.replace(/-/g, "+").replace(/_/g, "/")), c => c.charCodeAt(0));
+    const data = JSON.parse(new TextDecoder().decode(bytes));
+    if (!["x", "youtube"].includes(data.provider) || typeof data.vault !== "string" || !data.vault || data.vault.length > 200 || !/^[A-Za-z0-9_-]{43}$/.test(data.nonce)) throw Error();
+    if (code && (code.length > 4096 || query.getAll("code").length !== 1)) throw Error();
+    const target = new URL("obsidian://logss-clips-oauth");
+    target.searchParams.set("vault", data.vault);
+    target.searchParams.set("state", state);
+    if (error) target.searchParams.set("error", "access_denied");
+    else target.searchParams.set("code", code);
+    link.href = target.href;
+    link.hidden = false;
+    message.textContent = error ? "Authorization was declined. Return to logss to continue." : "Authorization is ready. Open Obsidian to finish connecting your account.";
+  } catch {
+    message.textContent = "No valid authorization response found. Start Connect from the Clip accounts screen in logss.";
+  }
+})();
+</script></body></html>
